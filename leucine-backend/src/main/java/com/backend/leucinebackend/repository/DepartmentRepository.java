@@ -1,0 +1,10 @@
+package com.backend.leucinebackend.repository;
+
+import com.backend.leucinebackend.entity.Department;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface DepartmentRepository extends JpaRepository<Department, Long> {
+    // Additional custom queries can be defined here if needed
+}
