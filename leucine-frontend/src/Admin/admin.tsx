@@ -19,7 +19,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-// Define the types for users
+
 interface User {
   id: number;
   username: string;
@@ -29,7 +29,7 @@ interface User {
   role: string;
 }
 
-// Example chart data
+
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
   { month: 'February', desktop: 305, mobile: 200 },
