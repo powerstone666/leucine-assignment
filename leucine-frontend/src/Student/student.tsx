@@ -18,15 +18,15 @@ function StudentDashboard() {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch('http://localhost:8080/student'); // Assuming your API endpoint
+      const response = await fetch('http://localhost:8080/student'); 
       const data = await response.json();
       console.log(data)
-      // Map and handle missing fields with fallback defaults
+      
       const mappedStudents = data.map((student: any) => ({
         id: student?.id || student?.id || 0,  // Default to 0 if missing
         name: student?.name || "Unknown Name",  // Fallback to 'Unknown Name' if missing
         email: student?.email || "Unknown Department", // Fallback to 'Unknown Department'
-        phone: student?.phone || "Unknown Year" // Fallback to 'Unknown Year'
+        phone: student?.phone || "Unknown Year" 
       }));
       setStudents(mappedStudents);
     } catch (error) {
@@ -36,22 +36,22 @@ function StudentDashboard() {
   const [profile, setProfile] = useState<any>(null);
   const fetchProfile = async () => {
     try {
-      const response = await fetch('http://localhost:8080/studentProfile'); // Assuming your API endpoint
+      const response = await fetch('http://localhost:8080/studentProfile'); 
       const data = await response.json();
       console.log(data);
   
-      // Map and handle the API response structure
+       structure
       const mappedProfiles = data.map((profile: any) => ({
         id: profile?.user?.id || 0,  // Default to 0 if id is missing
         name: profile?.user?.name || "Unknown Name",  // Fallback to 'Unknown Name'
         email: profile?.user?.email || "Unknown Email", // Fallback to 'Unknown Email'
         phone: profile?.user?.phone || "Unknown Phone", // Fallback to 'Unknown Phone'
-        department: profile?.department?.name || "Unknown Department", // Fallback to 'Unknown Department'
-        year: profile?.year || "Unknown Year", // Fallback to 'Unknown Year'
+        department: profile?.department?.name || "Unknown Department", 
+        year: profile?.year || "Unknown Year", 
       }));
       setProfile(mappedProfiles[0]);
-      // Optionally, you can log or store the mappedProfiles in the state if needed
-      console.log(mappedProfiles);
+      
+      
   
     } catch (error) {
       console.log('Error fetching student profile:', error);
