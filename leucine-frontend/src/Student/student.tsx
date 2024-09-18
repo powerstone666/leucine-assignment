@@ -43,9 +43,9 @@ function StudentDashboard() {
        structure
       const mappedProfiles = data.map((profile: any) => ({
         id: profile?.user?.id || 0,  // Default to 0 if id is missing
-        name: profile?.user?.name || "Unknown Name",  // Fallback to 'Unknown Name'
-        email: profile?.user?.email || "Unknown Email", // Fallback to 'Unknown Email'
-        phone: profile?.user?.phone || "Unknown Phone", // Fallback to 'Unknown Phone'
+        name: profile?.user?.name || "Unknown Name",  
+        email: profile?.user?.email || "Unknown Email", 
+        phone: profile?.user?.phone || "Unknown Phone", 
         department: profile?.department?.name || "Unknown Department", 
         year: profile?.year || "Unknown Year", 
       }));
@@ -87,7 +87,7 @@ function StudentDashboard() {
          <img src="https://cdn-icons-png.flaticon.com/128/17446/17446833.png" className="w-24" alt="dashboard" />
        </div>
      
-       {/* Dynamically display the student name and email from profile data */}
+       
        <h1 className="text-center text-2xl font-bold mb-4">Name: {profile?.name || 'Unknown Name'}</h1>
        <h1 className="text-center text-2xl font-bold mb-4">Email: {profile?.email || 'Unknown Email'}</h1>
      
@@ -122,7 +122,7 @@ function StudentDashboard() {
         <>
           <h1 className="text-center text-2xl font-bold">Search for Students</h1>
           <div style={{ padding: '20px' }}>
-            {/* Search Input */}
+          
             <TextField
               label="Search"
               variant="outlined"
@@ -139,7 +139,7 @@ function StudentDashboard() {
               style={{ marginBottom: '20px' }}
             />
 
-            {/* Filter Selection */}
+            
             <div style={{ marginBottom: '20px' }}>
               <label style={{ marginRight: '10px' }}>Filter by:</label>
               <select
@@ -154,7 +154,7 @@ function StudentDashboard() {
 
             </div>
 
-            {/* Table */}
+            
             <TableContainer component={Paper}>
               <Table>
                 <TableHead>
