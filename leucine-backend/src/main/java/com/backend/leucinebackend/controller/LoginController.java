@@ -1,4 +1,4 @@
-package com.backend.leucinebackend.controller;
+/*package com.backend.leucinebackend.controller;
 
 import com.backend.leucinebackend.dto.LoginRequest;
 import com.backend.leucinebackend.services.CustomUserDetailsService;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
-/*@RestController
+@RestController
 public class LoginController {
 
    private AuthenticationManager authenticationManager;

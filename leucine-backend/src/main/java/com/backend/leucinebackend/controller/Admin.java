@@ -5,7 +5,6 @@ import com.backend.leucinebackend.entity.User;
 import com.backend.leucinebackend.repository.AdministratorProfileRepository;
 import com.backend.leucinebackend.repository.StudentProfileRepository;
 import com.backend.leucinebackend.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -65,7 +64,7 @@ public class Admin {
                
                 studentProfileRepository.deleteByUserId(id); 
 
-               =
+               
                 userRepository.deleteById(id);
                 return ResponseEntity.noContent().build();
             } else {
