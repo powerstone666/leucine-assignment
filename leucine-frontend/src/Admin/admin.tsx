@@ -7,7 +7,7 @@ import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import axios from 'axios';
 
-// Define the chart configuration
+
 const chartConfig = {
   desktop: {
     label: 'Desktop',
