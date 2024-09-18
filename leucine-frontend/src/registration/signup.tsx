@@ -1,10 +1,8 @@
-
 function Signup() {
-    return (
-      <>
-       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+  return (
+    <>
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Registration Form
           </h2>
@@ -12,9 +10,12 @@ function Signup() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form action="#" method="POST" className="space-y-6">
-          <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-               Full Name
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Full Name
               </label>
               <div className="mt-2">
                 <input
@@ -28,7 +29,10 @@ function Signup() {
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email address
               </label>
               <div className="mt-2">
@@ -42,15 +46,20 @@ function Signup() {
                 />
               </div>
             </div>
-
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Password
                 </label>
-              
+
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a
+                    href="#"
+                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >
                     Forgot password?
                   </a>
                 </div>
@@ -66,11 +75,12 @@ function Signup() {
                 />
               </div>
             </div>
-            <h1>Role:</h1>   <select>
-                <option value="1">Student</option>
-                <option value="2">Faculty</option>
-                <option value="3">Admin</option>
-                </select>
+            <h1>Role:</h1>{" "}
+            <select>
+              <option value="1">Student</option>
+              <option value="2">Faculty</option>
+              <option value="3">Admin</option>
+            </select>
             <div>
               <button
                 type="submit"
@@ -82,14 +92,17 @@ function Signup() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Already a member?{' '}
-            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                Sign In
+            Already a member?{" "}
+            <a
+              href="#"
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >
+              Sign In
             </a>
           </p>
         </div>
       </div>
-      </>
-    );
+    </>
+  );
 }
 export default Signup;

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
-    // Additional custom queries can be defined here if needed
+    
 }

@@ -88,9 +88,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable(); // Disable CSRF protection
-                 // Allow all requests
-                // Enable CORS
+        http.csrf().disable(); // Disabling CSRF protection
+              
 
         return http.build();
     }

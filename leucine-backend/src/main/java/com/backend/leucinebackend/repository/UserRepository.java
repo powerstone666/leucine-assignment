@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    // Additional custom queries can be defined here if needed
+
     User findByUsername(String username);
     List<User> findByRole(String role);
   User findByEmail(String email);

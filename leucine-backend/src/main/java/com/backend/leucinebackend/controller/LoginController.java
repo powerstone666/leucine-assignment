@@ -28,23 +28,22 @@ public class LoginController {
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
         try {
             System.out.println(loginRequest);
-            // Create an authentication token using email and password
+            
             UsernamePasswordAuthenticationToken authenticationToken =
                     new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword());
-
-            // Authenticate the user
+]
             Authentication authentication = authenticationManager.authenticate(authenticationToken);
 
-            // Check if role is valid (you may need to implement role validation here)
+        
             if (authentication.getAuthorities().stream().noneMatch(grantedAuthority -> grantedAuthority.getAuthority().equals(loginRequest.getRole()))) {
                 return new ResponseEntity<>("Invalid role", HttpStatus.BAD_REQUEST);
             }
 
-            // Authentication successful
+         
             return new ResponseEntity<>("Login successful", HttpStatus.OK);
 
         } catch (AuthenticationException e) {
-            // Handle authentication failure
+          
             return new ResponseEntity<>("Invalid email or password", HttpStatus.UNAUTHORIZED);
         }
     }

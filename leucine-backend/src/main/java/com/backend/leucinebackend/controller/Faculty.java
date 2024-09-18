@@ -42,7 +42,7 @@ public class Faculty {
             FacultyProfile updated = facultyProfileRepository.save(existingFaculty);
             return ResponseEntity.ok(updated);
         } else {
-            // Return a 404 Not Found response if the faculty profile does not exist
+            
             return ResponseEntity.notFound().build();
         }
     }

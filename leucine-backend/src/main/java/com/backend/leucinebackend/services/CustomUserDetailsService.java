@@ -24,8 +24,8 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         UserBuilder builder = org.springframework.security.core.userdetails.User.withUsername(email);
-        builder.password(user.getPassword()); // No password encoding applied
-        builder.roles(user.getRole()); // Assuming role is a single role; modify as needed.
+        builder.password(user.getPassword()); 
+        builder.roles(user.getRole()); 
         return builder.build();
     }
 }

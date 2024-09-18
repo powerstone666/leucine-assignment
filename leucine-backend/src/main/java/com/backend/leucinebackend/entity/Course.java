@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "Course")  // Ensure this matches the exact table name in your database
+@Table(name = "Course")  
 @Data
 public class Course {
 

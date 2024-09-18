@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface AdministratorProfileRepository extends JpaRepository<AdministratorProfile, Long> {
-    // Additional custom queries can be defined here if needed
+    
 
 
     List<AdministratorProfile>  findByUserId(int userId);

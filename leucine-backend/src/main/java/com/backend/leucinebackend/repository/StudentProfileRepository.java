@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface StudentProfileRepository extends JpaRepository<StudentProfile, Long> {
-    // Additional custom queries can be defined here if needed
+  
   List<StudentProfile> findByUserId(int userId);
     void deleteByUserId(Long userId);
 

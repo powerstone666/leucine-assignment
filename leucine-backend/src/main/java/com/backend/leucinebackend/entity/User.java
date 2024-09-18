@@ -18,7 +18,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String role;  // Treating 'role' as a normal string field
+    private String role;  
 
     @Column(nullable = false)
     private String name;

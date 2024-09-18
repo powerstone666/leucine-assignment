@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface FacultyProfileRepository extends JpaRepository<FacultyProfile, Long> {
-    // Additional custom queries can be defined here if needed
+   
     List<FacultyProfile> findByUserId(Long userId);
 }

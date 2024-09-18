@@ -1,10 +1,15 @@
-import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
-import axios from 'axios';
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  ReactNode,
+} from "react";
+import axios from "axios";
 
 interface User {
   email: string;
   role: string;
-  // Add other user fields as needed
 }
 
 interface AuthContextType {
@@ -16,12 +21,14 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
       setIsLoggedIn(true);
@@ -30,23 +37,27 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (email: string, password: string, role: string) => {
     try {
-      const response = await axios.post('http://localhost:8080/login', { email, password, role });
+      const response = await axios.post("http://localhost:8080/login", {
+        email,
+        password,
+        role,
+      });
       if (response.data.success) {
         setUser(response.data.user);
         setIsLoggedIn(true);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        localStorage.setItem("user", JSON.stringify(response.data.user));
       } else {
-        console.error('Login failed');
+        console.error("Login failed");
       }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
     }
   };
 
   const logout = () => {
     setUser(null);
     setIsLoggedIn(false);
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
   };
 
   return (
@@ -59,7 +70,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };

@@ -37,7 +37,7 @@ public class Admin {
         return userRepository.findAll();
     }
 
-    // Update user
+
     @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
@@ -55,24 +55,24 @@ public class Admin {
         }
     }
 
-    // Delete user
+
     @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/users/{id}")
 
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         try {
             if (userRepository.existsById(id)) {
-                // Delete related records in student_profile table
-                studentProfileRepository.deleteByUserId(id); // Ensure this repository method exists
+               
+                studentProfileRepository.deleteByUserId(id); 
 
-                // Now delete the user
+               =
                 userRepository.deleteById(id);
                 return ResponseEntity.noContent().build();
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
         } catch (Exception e) {
-            // Log the exception for troubleshooting
+          
             System.err.println("Error deleting user: " + e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
