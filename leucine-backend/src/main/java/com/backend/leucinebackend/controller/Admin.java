@@ -24,20 +24,20 @@ public class Admin {
     @Autowired
     private StudentProfileRepository studentProfileRepository;
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @GetMapping("/admin")
     public List<AdministratorProfile> getAdmin() {
         return administratorProfileRepository.findByUserId(3);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @GetMapping("/users")
     public List<User> getUsers() {
         return userRepository.findAll();
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         Optional<User> existingUser = userRepository.findById(id);
@@ -55,7 +55,7 @@ public class Admin {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @DeleteMapping("/users/{id}")
 
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {

@@ -18,19 +18,19 @@ public class Faculty {
     @Autowired
     private FacultyProfileRepository facultyProfileRepository;
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @GetMapping("/faculty")
     public List<FacultyProfile> getFaculty() {
         return facultyProfileRepository.findByUserId(2L);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @GetMapping("/studentcourse")
     public  List<StudentProfile> getStudentCourse() {
         return studentProfileRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @PutMapping("/facultyupdate")
     public ResponseEntity<FacultyProfile> updateFaculty(@RequestBody FacultyProfile updatedFaculty) {
         FacultyProfile existingFaculty = facultyProfileRepository.findById(2L).orElse(null);

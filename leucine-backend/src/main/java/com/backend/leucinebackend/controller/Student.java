@@ -17,7 +17,7 @@ public class Student {
     @Autowired
     private StudentProfileRepository studentProfileRepository;
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @GetMapping("/student")
     public List<User> getAllUsers() {
         try {
@@ -29,7 +29,7 @@ public class Student {
             return null;
         }
     }
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://leucine-assignment.vercel.app/")
     @GetMapping("/studentProfile")
     public List<StudentProfile> getAllStudentProfiles() {
         try {
