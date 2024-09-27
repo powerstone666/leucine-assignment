@@ -1,0 +1,45 @@
+[build]
+  # Directory to publish (output directory for Vite)
+  publish = "dist"
+  # Build command
+  command = "npm run build"
+
+[dev]
+  # Development settings for local server
+  functions = "netlify/functions"
+
+[[redirects]]
+  # Redirect all paths to the index.html for SPA routing
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+# Specify headers to set correct MIME types
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "*.tsx"
+  [headers.values]
+    Content-Type = "application/typescript"
+
+[[headers]]
+  for = "*.ts"
+  [headers.values]
+    Content-Type = "application/typescript"
+
+# Optionally add more headers for security or caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
