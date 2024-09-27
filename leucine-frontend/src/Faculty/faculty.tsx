@@ -50,7 +50,7 @@ function Faculty() {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch('http://localhost:8080/studentcourse');
+      const response = await fetch('https://leucine-production.up.railway.app/studentcourse');
       const data = await response.json();
       const mappedStudents = data.map((student: any) => ({
         id: student.userId || 0,
@@ -68,7 +68,7 @@ function Faculty() {
 
   const fetchFaculty = async () => {
     try {
-      const response = await fetch('http://localhost:8080/faculty');
+      const response = await fetch('https://leucine-production.up.railway.app/faculty');
       const data = await response.json();
       const mappedFaculty = data.map((faculty: any) => ({
         id: faculty.userId || 0,
@@ -94,7 +94,7 @@ function Faculty() {
         }
       };
 
-      const response = await axios.put('http://localhost:8080/facultyupdate', updatedFaculty);
+      const response = await axios.put('https://leucine-production.up.railway.app/facultyupdate', updatedFaculty);
        window.alert("updated successfully");
        
       console.log('Update successful:', response.data);

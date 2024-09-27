@@ -71,7 +71,7 @@ function Admin() {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:8080/users");
+      const response = await fetch("https://leucine-production.up.railway.app/users");
       const data = await response.json();
       const mappedUsers = data.map((user: any) => ({
         id: user.id || 0,
@@ -97,7 +97,7 @@ function Admin() {
           phone: editPhone || selectedUser.phone,
         };
         await axios.put(
-          `http://localhost:8080/users/${selectedUser.id}`,
+          `https://leucine-production.up.railway.app/users/${selectedUser.id}`,
           updatedUser
         );
         window.alert("User Updated Successfully");
@@ -111,7 +111,7 @@ function Admin() {
   const handleDelete = async (id: number) => {
     try {
       console.log(id);
-      await axios.delete(`http://localhost:8080/users/${id}`);
+      await axios.delete(`https://leucine-production.up.railway.app/users/${id}`);
 
       window.location.reload();
       fetchUsers();

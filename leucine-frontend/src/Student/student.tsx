@@ -28,7 +28,7 @@ function StudentDashboard() {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch("http://localhost:8080/student");
+      const response = await fetch("https://leucine-production.up.railway.app/student");
       const data = await response.json();
       console.log(data);
 
@@ -46,11 +46,11 @@ function StudentDashboard() {
   const [profile, setProfile] = useState<any>(null);
   const fetchProfile = async () => {
     try {
-      const response = await fetch("http://localhost:8080/studentProfile");
+      const response = await fetch("https://leucine-production.up.railway.app/studentProfile");
       const data = await response.json();
       console.log(data);
 
-      structure;
+   
       const mappedProfiles = data.map((profile: any) => ({
         id: profile?.user?.id || 0,
         name: profile?.user?.name || "Unknown Name",
