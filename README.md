@@ -1,5 +1,4 @@
 ﻿# leucine-assignment
-# Project Name
 
 This project is a full-stack web application that leverages modern technologies for the front-end and back-end, providing a seamless user experience with efficient data management and processing.
 
