@@ -1,6 +1,5 @@
 # vercel.toml
 
-# Specify the version of the Vercel configuration
 version = 2
 
 # Build settings
@@ -8,7 +7,7 @@ builds = [
   { src = "package.json", use = "@vercel/static-build" }
 ]
 
-# Define the output directory after the build
+# Output directory after build
 outputDirectory = "dist"
 
 # Define the routes for your application
@@ -16,10 +15,7 @@ routes = [
   { src = "/(.*)", dest = "/index.html" }
 ]
 
-# Specify the environment variables (optional)
+# Optional: Configure environment variables
 [env]
   NODE_ENV = "production"
 
-# Optional: Configure a region
-[regions]
-  us = "1" # Specify a region (like '1' for US)
