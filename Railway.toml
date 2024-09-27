@@ -1,0 +1,4 @@
+[build]
+  builder = "Nixpacks"
+  build_command = "cd leucine-backend && ./gradlew build"
+  start_command = "cd leucine-backend && java -jar build/libs/leucine-backend.jar"
