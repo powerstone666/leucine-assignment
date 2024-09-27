@@ -1,12 +1,4 @@
-[build]
-  # Directory to publish (output directory for Vite)
-  publish = "dist"
-  # Build command
-  command = "npm run build"
 
-[dev]
-  # Development settings for local server
-  functions = "netlify/functions"
 
 [[redirects]]
   # Redirect all paths to the index.html for SPA routing
